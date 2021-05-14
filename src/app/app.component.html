@@ -1,0 +1,35 @@
+<div class="bg-image">
+  <div class="margin-auto flex-column">
+    <div class="display-flex">
+      <button (click)="leftOnClick()"
+              class="arrow-button"
+              [disabled]= "imageIndex===0"
+              [class.grey-button]="imageIndex===0">
+        &#x2039;
+      </button>
+      <div class="width-height-400">
+        <img [src]="images[imageIndex].imageURL"
+             width="400"
+             class="img"/>
+      </div>
+      <button (click)="rightOnClick()"
+              class="arrow-button"
+              [disabled]="imageIndex === images.length-1"
+              [class.grey-button]="imageIndex === images.length-1">
+        &#x203A;
+      </button>
+    </div>
+    <p class="text">{{images[imageIndex].description}}</p>
+    <div class="justify-content-center" >
+      <img (click)="imageOnClick(idx)"
+           *ngFor="let image of images;let idx = index"
+           [class.big-image]="imageIndex === idx"
+           [src]="image.imageURL"
+           class="cursor-pointer small-images"
+           width="100">
+    </div>
+  </div>
+</div>
+
+
+

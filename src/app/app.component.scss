@@ -1,0 +1,78 @@
+.image-container{
+  width: 200px;
+  height: 200px;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.margin-auto{
+  margin: 0 auto;
+  width: max-content;
+}
+
+.justify-content-center{
+  justify-content: center;
+  display: flex;
+}
+
+.width-height-400{
+  width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+}
+
+.display-flex{
+  display: flex;
+  align-items: center;
+}
+
+.bg-image{
+  display: flex;
+  background-image: url("../assets/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: scroll;
+  background-size: cover;
+  min-height: 100%;
+  flex-wrap: wrap;
+  height: 100vh;
+}
+
+.img{
+  box-shadow: 5px 5px 5px #ccc;
+}
+
+.small-images{
+  margin: 10px;
+  box-shadow: 5px 5px 5px #000000b8;
+}
+
+.arrow-button{
+  background: none;
+  border: none;
+  font-size: 150px;
+  color:#000000b8;
+  text-shadow: 2px 2px 2px #ccc;
+}
+
+.big-image{
+  box-shadow: 5px 5px 5px #ccc;
+}
+
+.small-images-container{
+  width: 100px;
+  height: 100px;
+}
+
+.grey-button{
+  color: rgba(128, 128, 128, 0.5);
+}
+
+.text{
+  font-family: 'Zen Dots', cursive;
+  text-align: center;
+  text-shadow: 3px 3px 3px #ccc;
+}
