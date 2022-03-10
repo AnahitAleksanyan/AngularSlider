@@ -27,4 +27,5 @@ jobs:
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+      - name: TypeScript Linter Action
+        uses: AntonKornus/TypeScript-Linter@1.0.0
