@@ -1,31 +1,22 @@
-# This workflow executes several linters on changed files based on languages used in your code base whenever
-# you push a code or open a pull request.
-#
-# You can adjust the behavior by modifying this file.
-# For more information, see:
-# https://github.com/github/super-linter
-name: Lint Code Base
-
 on:
   push:
-    branches: [ master ]
   pull_request:
-    branches: [ master ]
+
 jobs:
-  run-lint:
+  eslint:
+    name: eslint
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-        with:
-          # Full git history is needed to get a proper list of changed files within `super-linter`
-          fetch-depth: 0
-
-      - name: Lint Code Base
-        uses: github/super-linter@v4
-        env:
-          VALIDATE_ALL_CODEBASE: false
-          DEFAULT_BRANCH: master
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: TypeScript Linter Action
-        uses: AntonKornus/TypeScript-Linter@1.0.0
+    - uses: actions/checkout@v1
+    - name: install node v12
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12
+    - name: yarn install
+      run: yarn install
+    - name: eslint
+      uses: icrawl/action-eslint@v1
+      with:
+        custom-glob: apps # only if a different glob is needed, default: src
+    - name: ESLint (JS/TS) Action 
+      uses: iCrawl/action-eslint@v1
